@@ -1,0 +1,76 @@
+% !TEX TS-program = XeLaTeX
+
+% This document is written as a template of Bangla latex
+% Author: Md. Enamul Hoque
+% Affiliation: Department of Physics, SUST
+% email: mjonyh@gmail.com
+
+\documentclass[12pt]{report}
+\usepackage{polyglossia}
+
+\setmainlanguage[numerals=Devanagari]{bengali}
+\setotherlanguage{english}
+\newfontfamily\englishfont[Scale=MatchLowercase]{Monaco}
+\newfontfamily\bengalifont[Script=Bengali]{SolaimanLipi}
+
+\setmainfont[Script=Devanagari]{SolaimanLipi}
+\makeatletter
+\def\bengalidigits#1{\expandafter\@bengali@digits #1@}
+\def\@bengali@digits#1{%
+  \ifx @#1
+  \else
+    \ifx0#1০\else\ifx1#1১\else\ifx2#1২\else\ifx3#1৩\else\ifx4#1৪\else\ifx5#1৫\else\ifx6#1৬\else\ifx7#1৭\else\ifx8#1৮\else\ifx9#1৯\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+    \expandafter\@bengali@digits
+  \fi
+}
+\makeatother
+
+\def\bengalinumber#1{\bengalidigits{\number#1}}
+\def\bengalinumeral#1{\bengalinumber{\csname c@#1\endcsname}}
+
+\renewcommand\thepart{\bengalinumeral{part}}
+\renewcommand\thechapter{\bengalinumeral{chapter}}
+\renewcommand\thesection{\bengalinumeral{section}}
+\renewcommand\thesubsection{\bengalinumeral{subsection}}
+\renewcommand\thesubsubsection{\bengalinumeral{subsubsection}}
+\renewcommand\thepage{\bengalinumeral{page}}
+\renewcommand\theenumi{\bengalinumeral{enumi}}
+
+\usepackage{fontspec}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% begining of the document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%-------------- Title page ------------------ %%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+	\centering
+	\vspace{1.5cm}
+	{\huge\bfseries সাধারণ ডায়েরি\par}
+	\vspace{1.25cm}
+	{\Large\itshape মুঃ এনামুল হক\par}
+	\vfill
+
+	{\large \today\par}
+\end{titlepage}
+%%%%%%%%%%%%-------------- End of Title page ----------- %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tableofcontents
+
+\part{দিনের শুরু}
+\chapter{পটভূমি}
+\section{ভূমিকা}
+এটি একটি ইংরেজি লেখা ছোট অধ্যায় যে বাঙ্গালী এ \textenglish{Google Translate} দ্বারা অনুবাদ করা হয়েছে. এটা খুব স্পষ্ট নয় যদি সঠিক অনুবাদ বা না কিন্তু ক্রিয়াটি ফন্ট দেখাতে যথেষ্ট হওয়া উচিত.
+
+\begin{enumerate}
+    \item   \foreignlanguage{english}{This is first}
+    \item   বাংলা লেখা
+\end{enumerate}
+
+\section{বৃহস্পতিবার, ২৬ জানুয়ারি, ২০১৭}
+ঘুম থেকে চোখ খুলে দেখি ঘড়িতে সকাল ৯.২০। আজ আমার সকাল ৯ টায় অফিসে থাকার কথা। তাই পড়িমরি করে অফিসের জন্য তৈরি হয়ে বের পড়লাম আমার সাইকেলটি নিয়ে।
+
+\subsection{প্রথম সাবসেকশন}
+\subsection{দ্বিতীয় সাবসেকশন}
+‌‌\subsubsection{প্রথম সাবসাবসেকশন}
+
+\end{document}
